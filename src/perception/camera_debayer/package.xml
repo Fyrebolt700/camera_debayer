@@ -4,7 +4,7 @@
   <version>4.4.0</version>
 
   <description>GPU Bayer debayer node for WATonomous camera pipeline</description>
-  <maintainer email="your-email@uwaterloo.ca">Your Name</maintainer>
+  <maintainer email="rjaganat@uwaterloo.ca">Rithanya Jaganathan</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -12,7 +12,6 @@
   <depend>rclcpp</depend>
   <depend>rclcpp_components</depend>
   <depend>std_msgs</depend>
-  <depend>message_filters</depend>
   <depend>isaac_ros_managed_nitros</depend>
   <depend>sensor_msgs</depend>
   <depend>isaac_ros_nitros_image_type</depend>

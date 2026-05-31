@@ -8,8 +8,12 @@ endif()
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
-# GPU Image Builder node
+# Core debayer logic (GPU/NPP)
+ament_auto_add_library(camera_debayer_core SHARED src/camera_debayer_core.cpp)
+
+# Debayer node
 ament_auto_add_library(camera_debayer_node SHARED src/camera_debayer_node.cpp)
+target_link_libraries(camera_debayer_node PUBLIC camera_debayer_core nppicc)
 rclcpp_components_register_nodes(camera_debayer_node "wato::perception::camera_debayer::CameraDebayerNode")
 set(node_plugins "${node_plugins}wato::perception::camera_debayer::CameraDebayerNode;$<TARGET_FILE:camera_debayer_node>\n")
 set_target_properties(camera_debayer_node PROPERTIES
